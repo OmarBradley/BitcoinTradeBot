@@ -30,7 +30,9 @@ def versions = [
         okHttp          : "3.11.0",
         iconicsCore     : "3.1.0",
         fontawesome     : "5.3.1.1",
-        databinding     : "3.2.0-alpha10"
+        databinding     : "3.2.0-alpha10",
+        fabric          : "1.27.1",
+        crashlytics     : "2.9.9@aar"
 ]
 
 def kotlin = [
@@ -93,12 +95,20 @@ def databinding = [
 ]
 deps.databinding = databinding
 
+def fabric = [
+        gradle     : "io.fabric.tools:gradle:$versions.fabric",
+        crashlytics: "com.crashlytics.sdk.android:crashlytics:$versions.crashlytics"
+]
+deps.fabric = fabric
 
 def addRepositories(RepositoryHandler repositoryHandler) {
     repositoryHandler.google()
     repositoryHandler.jcenter()
     repositoryHandler.maven {
         url "https://dl.bintray.com/spekframework/spek-dev"
+    }
+    repositoryHandler.maven {
+        url 'https://maven.fabric.io/public'
     }
     repositoryHandler.mavenCentral()
 }
