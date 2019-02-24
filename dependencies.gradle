@@ -1,0 +1,106 @@
+def config = [
+        buildToolsVersion: 28,
+        minSdkVersion    : 23,
+        targetSdkVersion : 28,
+        versionCode      : 1,
+        versionName      : "1.0"
+]
+ext.config = config
+
+ext.deps = [:]
+
+def versions = [
+        kotlin          : "1.3.11",
+        kotlinTest      : "3.2.1",
+        gradle          : "3.3.0",
+        appcompat       : "1.0.0-rc02",
+        ktx             : "1.0.0-rc02",
+        constraintlayout: "2.0.0-alpha3",
+        test            : "1.1.0-alpha4",
+        espresso        : "3.1.0-alpha4",
+        androidJunit5   : "1.2.0.0",
+        junit5          : "5.2.0",
+        spek            : "2.0.0-alpha.2",
+        rxKotlin        : "2.3.0",
+        rxAndroid       : "2.1.0",
+        androidX        : "2.0.0-beta01",
+        mocktioKotlin   : "2.0.0-RC2",
+        hamcrest        : "2.0.0.0",
+        retrofit        : "2.4.0",
+        okHttp          : "3.11.0",
+        iconicsCore     : "3.1.0",
+        fontawesome     : "5.3.1.1",
+        databinding     : "3.2.0-alpha10"
+]
+
+def kotlin = [
+        gradlePlugin: "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin",
+        stdlibJdk8  : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$versions.kotlin",
+        reflect     : "org.jetbrains.kotlin:kotlin-reflect:$versions.kotlin",
+        test        : "io.kotlintest:kotlintest-runner-junit5:$versions.kotlinTest"
+]
+deps.kotlin = kotlin
+
+def build = [
+        gradle: "com.android.tools.build:gradle:$versions.gradle"
+]
+deps.build = build
+
+def androidx = [
+        appcompat       : "androidx.appcompat:appcompat:$versions.appcompat",
+        ktx             : "androidx.core:core-ktx:$versions.ktx",
+        constraintlayout: "androidx.constraintlayout:constraintlayout:$versions.constraintlayout",
+        recyclerview    : "androidx.recyclerview:recyclerview:$versions.appcompat",
+
+        test            : [
+                runner  : "androidx.test:runner:$versions.test",
+                espresso: "androidx.test.espresso:espresso-core:$versions.espresso",
+                rule    : "androidx.test:rules:$versions.test",
+                arch    : "androidx.arch.core:core-testing:$versions.androidX"
+        ]
+]
+deps.androidx = androidx
+
+def lifecycle = [
+        compiler       : "androidx.lifecycle:lifecycle-compiler:$versions.androidX",
+        extensions     : "androidx.lifecycle:lifecycle-extensions:$versions.androidX",
+        reactivestreams: "androidx.lifecycle:lifecycle-reactivestreams-ktx:$versions.androidX",
+]
+deps.lifecycle = lifecycle
+
+def rx = [
+        kotlin : "io.reactivex.rxjava2:rxkotlin:$versions.rxKotlin",
+        android: "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid",
+]
+deps.rx = rx
+
+def unitTest = [
+        mocktio : "com.nhaarman.mockitokotlin2:mockito-kotlin:$versions.mocktioKotlin",
+        hamcrest: "org.hamcrest:hamcrest-junit:$versions.hamcrest"
+]
+deps.unitTest = unitTest
+
+
+def iconics = [
+        core       : "com.mikepenz:iconics-core:$versions.iconicsCore",
+        views      : "com.mikepenz:iconics-views:$versions.iconicsCore",
+        fontawesome: "com.mikepenz:fontawesome-typeface:$versions.fontawesome",
+]
+deps.iconics = iconics
+
+def databinding = [
+        compiler: "com.android.databinding:compiler:$versions.databinding"
+]
+deps.databinding = databinding
+
+
+def addRepositories(RepositoryHandler repositoryHandler) {
+    repositoryHandler.google()
+    repositoryHandler.jcenter()
+    repositoryHandler.maven {
+        url "https://dl.bintray.com/spekframework/spek-dev"
+    }
+    repositoryHandler.mavenCentral()
+}
+
+ext.addRepositories = this.&addRepositories
