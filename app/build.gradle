@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'io.fabric'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     signingConfigs {
@@ -12,7 +13,9 @@ android {
             storePassword 'DLwogns12!@'
         }
     }
+
     compileSdkVersion 28
+
     defaultConfig {
         applicationId "omarbradley.com.bitcointradebot"
         minSdkVersion config.minSdkVersion
@@ -34,6 +37,7 @@ android {
 }
 
 dependencies {
+
     implementation deps.kotlin.stdlibJdk8
     implementation deps.androidx.appcompat
     implementation deps.androidx.ktx
@@ -42,10 +46,13 @@ dependencies {
     implementation(deps.fabric.crashlytics) {
         transitive = true
     }
+
     kapt deps.lifecycle.compiler
+
     testImplementation deps.kotlin.test
     testImplementation deps.unitTest.mocktio
     testImplementation deps.androidx.test.arch
+
     androidTestImplementation deps.androidx.test.runner
     androidTestImplementation deps.androidx.test.espresso
     androidTestImplementation deps.androidx.test.rule

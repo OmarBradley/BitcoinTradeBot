@@ -1,10 +1,10 @@
-package omarbradley.com.bitcointradebot
+package omarbradley.com.bitcointradebot.main
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import omarbradley.com.bitcointradebot.R
+import omarbradley.com.bitcointradebot.base.BaseActivity
 
-class MainActivity : AppCompatActivity() {
-
+class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
