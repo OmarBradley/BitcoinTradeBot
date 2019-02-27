@@ -10,6 +10,6 @@
 
     <!-- Text -->
     <color name="textWhite">#FFFFFF</color>
-
+    <color name="textBlack">#000000</color>
 
 </resources>

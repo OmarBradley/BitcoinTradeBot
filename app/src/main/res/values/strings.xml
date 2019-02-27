@@ -1,8 +1,13 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <string name="app_name">BitcoinTradeBot</string>
 
-    <string name="label.select_exchange" tools:ignore="ExtraTranslation">거래소 고르기</string>
+    <string name="label.select_exchange">거래소 고르기</string>
+    <string name="label.input_key">Key 입력</string>
 
+    <string name="label.gopax">고팍스</string>
+    <string name="label.input_api_key">API Key를 입력하세요</string>
+    <string name="label.input_secret_key">Secret Key를 입력하세요</string>
+    <string name="label.login_gopax">고팍스 거래소 로그인</string>
 
 </resources>

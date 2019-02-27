@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Text -->
+    <dimen name="textSize16">16sp</dimen>
+
+    <!-- Elevation -->
     <dimen name="toolBarElevation">3dp</dimen>
+
+    <!-- Margin -->
+    <dimen name="layoutMargin">16dp</dimen>
+    <dimen name="viewMargin">16dp</dimen>
 
 </resources>

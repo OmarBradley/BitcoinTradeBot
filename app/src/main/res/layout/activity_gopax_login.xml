@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bgWhite"
+            tools:context=".gopax.GopaxLoginActivity">
+
+        <Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:title="@string/label.input_key"
+                android:titleTextColor="@color/textWhite"
+                android:background="@color/bgGreen"
+                android:elevation="@dimen/toolBarElevation"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintBottom_toTopOf="@+id/editText_inputApiKey"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        <EditText
+                android:id="@+id/editText_inputApiKey"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/viewMargin"
+                android:hint="@string/label.input_api_key"
+                android:textColorHint="@color/textBlack"
+                android:textColor="@color/textBlack"
+                android:inputType="text"
+                app:backgroundTint="@color/bgGreen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/editText_inputSecretKey"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
+
+        <EditText
+                android:id="@+id/editText_inputSecretKey"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/viewMargin"
+                android:hint="@string/label.input_secret_key"
+                android:textColorHint="@color/textBlack"
+                android:textColor="@color/textBlack"
+                android:inputType="text"
+                app:backgroundTint="@color/bgGreen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/button_loginGopax"
+                app:layout_constraintTop_toBottomOf="@+id/editText_inputApiKey"/>
+
+        <Button
+                android:id="@+id/button_loginGopax"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/viewMargin"
+                android:text="@string/label.login_gopax"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText_inputSecretKey"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+
+
