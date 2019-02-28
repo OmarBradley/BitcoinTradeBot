@@ -27,16 +27,15 @@ android {
 }
 
 dependencies {
+
     implementation deps.kotlin.stdlibJdk8
-    implementation deps.androidx.appcompat
-    implementation deps.androidx.ktx
-    implementation deps.androidx.constraintlayout
-    implementation deps.androidx.recyclerview
+    implementation deps.retrofit2.retrofit
+    implementation deps.retrofit2.coroutinesAdapter
+    implementation deps.retrofit2.gsonConvertor
     implementation(deps.fabric.crashlytics) {
         transitive = true
     }
-
-    kapt deps.lifecycle.compiler
+    implementation deps.koin.core
 
     testImplementation deps.kotlin.test
     testImplementation deps.unitTest.mocktio
