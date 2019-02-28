@@ -32,6 +32,9 @@ dependencies {
     implementation deps.retrofit2.retrofit
     implementation deps.retrofit2.coroutinesAdapter
     implementation deps.retrofit2.gsonConvertor
+    implementation deps.okhttp3.okhttp
+    implementation deps.okhttp3.logging
+
     implementation(deps.fabric.crashlytics) {
         transitive = true
     }
