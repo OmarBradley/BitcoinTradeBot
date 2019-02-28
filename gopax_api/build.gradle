@@ -1,0 +1,17 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+
+dependencies {
+
+    implementation deps.kotlin.stdlibJdk8
+    implementation deps.retrofit2.retrofit
+    implementation deps.retrofit2.coroutinesAdapter
+    implementation deps.retrofit2.gsonConvertor
+    implementation deps.okhttp3.okhttp
+    implementation deps.okhttp3.logging
+    implementation deps.koin.core
+
+    testImplementation deps.kotlin.test
+    testImplementation deps.unitTest.mocktio
+    testImplementation deps.androidx.test.arch
+}
