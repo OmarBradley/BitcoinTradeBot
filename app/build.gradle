@@ -38,6 +38,12 @@ android {
     lintOptions{
         disable 'ExtraTranslation'
     }
+
+    testOptions {
+        unitTests.all {
+            useJUnitPlatform()
+        }
+    }
 }
 
 dependencies {
@@ -53,7 +59,7 @@ dependencies {
 
     kapt deps.lifecycle.compiler
 
-    testImplementation deps.kotlin.test
+    testImplementation deps.kotlinTest.runner
     testImplementation deps.unitTest.mocktio
     testImplementation deps.androidx.test.arch
 

@@ -1,1 +1,1 @@
-include ':app', ':gopax_api'
+include ':app', ':gopax_api', ':util'
