@@ -37,7 +37,9 @@ def versions = [
         koin             : "2.0.0-beta-1",
         okhttp3          : "3.9.1",
         kotlinTest       : "3.3.0",
-        coroutine        : "1.1.1"
+        coroutine        : "1.1.1",
+        gson             : "2.8.5",
+        commonsCodec     : "1.12"
 ]
 
 def kotlin = [
@@ -87,7 +89,7 @@ def rx = [
 deps.rx = rx
 
 def unitTest = [
-        mocktio : "com.nhaarman.mockitokotlin2:mockito-kotlin:$versions.mocktioKotlin"
+        mocktio: "com.nhaarman.mockitokotlin2:mockito-kotlin:$versions.mocktioKotlin"
 ]
 deps.unitTest = unitTest
 
@@ -131,6 +133,16 @@ def kotlinTest = [
         runner: "io.kotlintest:kotlintest-runner-junit5:$versions.kotlinTest"
 ]
 deps.kotlinTest = kotlinTest
+
+def gson = [
+        gson: "com.google.code.gson:gson:$versions.gson"
+]
+deps.gson = gson
+
+def apacheCommons = [
+        codec: "commons-codec:commons-codec:$versions.commonsCodec"
+]
+deps.apacheCommons = apacheCommons
 
 static def addRepositories(RepositoryHandler repositoryHandler) {
     repositoryHandler.google()

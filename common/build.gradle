@@ -1,0 +1,9 @@
+apply plugin: 'kotlin'
+
+dependencies {
+
+    implementation deps.kotlin.stdlibJdk8
+    implementation deps.gson.gson
+    implementation deps.apacheCommons.codec
+}
+
