@@ -40,7 +40,8 @@ def versions = [
         coroutine        : "1.1.1",
         gson             : "2.8.5",
         commonsCodec     : "1.12",
-        jodaTime         : "2.10.1"
+        jodaTime         : "2.10.1",
+        room             : "2.1.0-alpha04"
 ]
 
 def kotlin = [
@@ -149,6 +150,14 @@ def joda = [
         jodaTime: "joda-time:joda-time:$versions.jodaTime"
 ]
 deps.joda = joda
+
+def room = [
+        runtime   : "androidx.room:room-runtime:$versions.room",
+        compiler  : "androidx.room:room-compiler:$versions.room",
+        coroutines: "androidx.room:room-coroutines:$versions.room",
+        test      : "androidx.room:room-testing:$versions.room"
+]
+deps.room = room
 
 static def addRepositories(RepositoryHandler repositoryHandler) {
     repositoryHandler.google()

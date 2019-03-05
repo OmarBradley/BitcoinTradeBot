@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion config.compileSdkVersion
@@ -41,7 +41,12 @@ dependencies {
     implementation deps.koin.core
     implementation deps.coroutine.core
     implementation deps.joda.jodaTime
+    implementation deps.room.runtime
+    implementation deps.room.coroutines
+
+    kapt deps.room.compiler
 
     testImplementation deps.kotlinTest.runner
     testImplementation deps.koin.test
+    testImplementation deps.room.test
 }
