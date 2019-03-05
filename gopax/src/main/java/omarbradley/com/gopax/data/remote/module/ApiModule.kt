@@ -3,7 +3,7 @@ package omarbradley.com.gopax.data.remote.module
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import omarbradley.com.gopax.data.remote.api.GopaxApi
+import omarbradley.com.gopax.data.remote.api.Api
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -21,18 +21,21 @@ val gopaxApiModule = module {
     }
 
     single {
+        CoroutineCallAdapterFactory()
+    }
+
+    single {
+        GsonConverterFactory.create()
+    }
+
+    single {
         Retrofit.Builder()
             .baseUrl(GOPAX_API_END_POINT)
             .client(get() as OkHttpClient)
-            .addCallAdapterFactory(CoroutineCallAdapterFactory())
-            .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(get() as CoroutineCallAdapterFactory)
+            .addConverterFactory(get() as GsonConverterFactory)
             .build()
-            .create(GopaxApi::class.java)
+            .create(Api::class.java)
     }
+
 }
-
-
-
-
-
-

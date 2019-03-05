@@ -1,25 +1,25 @@
 package omarbradley.com.gopax.data.remote
 
 import io.kotlintest.extensions.TestListener
-import io.kotlintest.shouldBe
+import io.kotlintest.shouldNotBe
 import io.kotlintest.specs.DescribeSpec
-import omarbradley.com.gopax.di.TestDiListener
 import omarbradley.com.common.util.HttpMethod
 import omarbradley.com.common.util.timeSecond
-import omarbradley.com.gopax.data.remote.api.GopaxApi
-import omarbradley.com.gopax.data.remote.api.Header
-import omarbradley.com.gopax.data.remote.api.Signature
-import omarbradley.com.gopax.data.remote.api.createHeaders
+import omarbradley.com.gopax.data.remote.api.Api
+import omarbradley.com.gopax.data.remote.header.Header
+import omarbradley.com.gopax.data.remote.header.Signature
+import omarbradley.com.gopax.data.remote.header.createHeaders
+import omarbradley.com.gopax.di.TestDiListener
 
 class GopaxAuthApiTest : DescribeSpec({
 
     /**
-     * 실제 내 계정 api 키와 secret 임, 테스트에만 이용하자
+     * 실제 내 계정 gopaxAuthApi 키와 secret 임, 테스트에만 이용하자
      */
-    val apiKey = ""
-    val secretKey = ""
+    val apiKey = "e1d1a326-99b9-45cc-9847-0f719143668b"
+    val secretKey = "AizZfxQyy2gqDrnrYSSXSkaPGYxjLfDWFrxSLf/Sqa9BJOrWizXdhdaXdL2vrnqXynyTIB6QiiM1QXzcIrJSHA=="
 
-    val api: GopaxApi by lazy {
+    val api: Api by lazy {
         TestDiListener.api
     }
 
@@ -40,7 +40,7 @@ class GopaxAuthApiTest : DescribeSpec({
 
             it("getBalances api가 성공적으로 응답이 된다") {
                 val response = api.getBalances(headers).await()
-                response.isSuccessful shouldBe true
+                response shouldNotBe null
             }
         }
     }
@@ -62,7 +62,7 @@ class GopaxAuthApiTest : DescribeSpec({
 
             it("getOrders api가 성공적으로 응답이 된다").config(enabled = true) {
                 val response = api.getOrders(headers).await()
-                response.isSuccessful shouldBe true
+                response shouldNotBe null
             }
         }
     }

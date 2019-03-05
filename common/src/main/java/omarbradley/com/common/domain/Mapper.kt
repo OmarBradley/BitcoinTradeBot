@@ -2,8 +2,8 @@ package omarbradley.com.common.domain
 
 interface Mapper<ENTITY, DATA> {
 
-    fun mapFromEntity(entity: ENTITY): DATA
+    fun toData(entity: ENTITY): DATA
 
-    fun mapToEntity(data: DATA): ENTITY
+    fun toEntity(data: DATA): ENTITY
 
 }

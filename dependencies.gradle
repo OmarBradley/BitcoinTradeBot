@@ -39,7 +39,8 @@ def versions = [
         kotlinTest       : "3.3.0",
         coroutine        : "1.1.1",
         gson             : "2.8.5",
-        commonsCodec     : "1.12"
+        commonsCodec     : "1.12",
+        jodaTime         : "2.10.1"
 ]
 
 def kotlin = [
@@ -143,6 +144,11 @@ def apacheCommons = [
         codec: "commons-codec:commons-codec:$versions.commonsCodec"
 ]
 deps.apacheCommons = apacheCommons
+
+def joda = [
+        jodaTime: "joda-time:joda-time:$versions.jodaTime"
+]
+deps.joda = joda
 
 static def addRepositories(RepositoryHandler repositoryHandler) {
     repositoryHandler.google()

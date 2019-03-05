@@ -1,6 +1,6 @@
-package omarbradley.com.gopax.data.remote.json
+package omarbradley.com.gopax.data.remote.json.resopnse
 
-data class BalanceJson(
+internal data class BalanceJson(
     val asset: String,
     val avail: Double,
     val hold: Int,

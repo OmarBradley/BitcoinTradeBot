@@ -5,7 +5,7 @@ import javax.crypto.Mac
 import javax.crypto.spec.SecretKeySpec
 
 enum class MacAlgorithm {
-    HmacSHA512
+    HMACSHA512
 }
 
 fun String.decodeToBase64(): ByteArray =

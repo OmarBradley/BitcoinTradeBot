@@ -1,8 +1,8 @@
-package omarbradley.com.gopax.data.remote.api
+package omarbradley.com.gopax.data.remote.header
 
 import omarbradley.com.common.util.*
 
-data class Signature(
+internal data class Signature(
     val secret: String,
     val method: HttpMethod,
     val requestPath: String,
@@ -10,25 +10,42 @@ data class Signature(
     val body: Any? = null
 )
 
-fun Signature.generateSignature(): String {
+internal fun Signature.generateSignature(): String {
     val endPoint = requestPath.split("\\?")[0]
     val bodyJson = body?.toJsonString() ?: ""
     val what = "$nonce${method.name}$endPoint$bodyJson"
-    val signedSecretKey = secret.signature(MacAlgorithm.HmacSHA512)
+    val signedSecretKey = secret.signature(MacAlgorithm.HMACSHA512)
     return signedSecretKey.encodeAsString(what.toByteArray())
 }
 
-data class Header(
+internal data class Header(
     val apiKey: String,
     val signature: Signature,
     val contentType: String = JSON_CONTENT_TYPE
 )
 
-fun Header.createHeaders() =
+internal fun Header.createHeaders() =
     mapOf(
         "API-KEY" to apiKey,
         "SIGNATURE" to signature.generateSignature(),
         "NONCE" to signature.nonce.toString(),
         "Content-Type" to contentType
     )
+
+internal fun createHeaders(
+    secretKey: String,
+    apiKey: String,
+    method: HttpMethod,
+    requestPath: String,
+    nonce: Long = timeSecond,
+    body: Any? = null
+) =
+    Header(
+        apiKey,
+        Signature(secretKey, method, requestPath, nonce, body)
+    ).createHeaders()
+
+
+
+
 
