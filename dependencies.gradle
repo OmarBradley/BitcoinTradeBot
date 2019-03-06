@@ -19,7 +19,6 @@ def versions = [
         test             : "1.1.0-alpha4",
         espresso         : "3.1.0-alpha4",
         androidJunit5    : "1.2.0.0",
-        junit5           : "5.2.0",
         spek             : "2.0.0-alpha.2",
         rxKotlin         : "2.3.0",
         rxAndroid        : "2.1.0",
@@ -41,7 +40,9 @@ def versions = [
         gson             : "2.8.5",
         commonsCodec     : "1.12",
         jodaTime         : "2.10.1",
-        room             : "2.1.0-alpha04"
+        room             : "2.1.0-alpha04",
+        junit4           : "4.12",
+        hamcrest         : "2.1"
 ]
 
 def kotlin = [
@@ -89,12 +90,6 @@ def rx = [
         android: "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid",
 ]
 deps.rx = rx
-
-def unitTest = [
-        mocktio: "com.nhaarman.mockitokotlin2:mockito-kotlin:$versions.mocktioKotlin"
-]
-deps.unitTest = unitTest
-
 
 def iconics = [
         core       : "com.mikepenz:iconics-core:$versions.iconicsCore",
@@ -158,6 +153,12 @@ def room = [
         test      : "androidx.room:room-testing:$versions.room"
 ]
 deps.room = room
+
+def unitTest = [
+        junit4  : "junit:junit:$versions.junit4",
+        hamcrest: "org.hamcrest:hamcrest:$versions.hamcrest"
+]
+deps.unitTest = unitTest
 
 static def addRepositories(RepositoryHandler repositoryHandler) {
     repositoryHandler.google()

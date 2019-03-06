@@ -39,6 +39,7 @@ dependencies {
     implementation deps.okhttp3.okhttp
     implementation deps.okhttp3.logging
     implementation deps.koin.core
+    implementation deps.koin.android
     implementation deps.coroutine.core
     implementation deps.joda.jodaTime
     implementation deps.room.runtime
@@ -49,4 +50,9 @@ dependencies {
     testImplementation deps.kotlinTest.runner
     testImplementation deps.koin.test
     testImplementation deps.room.test
+
+    androidTestImplementation deps.unitTest.junit4
+    androidTestImplementation deps.unitTest.hamcrest
+    androidTestImplementation deps.androidx.test.runner
+    androidTestImplementation deps.koin.test
 }

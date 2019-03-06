@@ -60,7 +60,6 @@ dependencies {
     kapt deps.lifecycle.compiler
 
     testImplementation deps.kotlinTest.runner
-    testImplementation deps.unitTest.mocktio
     testImplementation deps.androidx.test.arch
 
     androidTestImplementation deps.androidx.test.runner
