@@ -1,14 +1,14 @@
 package omarbradley.com.gopax.data.remote
 
 import omarbradley.com.gopax.data.NonAuthRepository
-import omarbradley.com.gopax.data.remote.api.Api
+import omarbradley.com.gopax.data.remote.api.GopaxApi
 import omarbradley.com.gopax.data.remote.mapper.request.*
 import omarbradley.com.gopax.entity.AssetType
 import omarbradley.com.gopax.entity.resopnse.*
 import omarbradley.com.gopax.entity.toPair
 
 internal class RemoteNonAuthRepository(
-    private val api: Api
+    private val api: GopaxApi
 ) : NonAuthRepository {
 
     override suspend fun getAsserts(): List<Asset> =

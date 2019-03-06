@@ -5,7 +5,7 @@ import io.kotlintest.shouldNotBe
 import io.kotlintest.specs.DescribeSpec
 import omarbradley.com.common.util.HttpMethod
 import omarbradley.com.common.util.timeSecond
-import omarbradley.com.gopax.data.remote.api.Api
+import omarbradley.com.gopax.data.remote.api.GopaxApi
 import omarbradley.com.gopax.data.remote.header.Header
 import omarbradley.com.gopax.data.remote.header.Signature
 import omarbradley.com.gopax.data.remote.header.createHeaders
@@ -19,7 +19,7 @@ class GopaxAuthApiTest : DescribeSpec({
     val apiKey = "e1d1a326-99b9-45cc-9847-0f719143668b"
     val secretKey = "AizZfxQyy2gqDrnrYSSXSkaPGYxjLfDWFrxSLf/Sqa9BJOrWizXdhdaXdL2vrnqXynyTIB6QiiM1QXzcIrJSHA=="
 
-    val api: Api by lazy {
+    val api: GopaxApi by lazy {
         TestDiListener.api
     }
 

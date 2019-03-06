@@ -3,12 +3,12 @@ package omarbradley.com.gopax.data.remote
 import io.kotlintest.extensions.TestListener
 import io.kotlintest.shouldNotBe
 import io.kotlintest.specs.StringSpec
-import omarbradley.com.gopax.data.remote.api.Api
+import omarbradley.com.gopax.data.remote.api.GopaxApi
 import omarbradley.com.gopax.di.TestDiListener
 
 class GopaxNonAuthApiTest : StringSpec({
 
-    val api: Api by lazy {
+    val api: GopaxApi by lazy {
         TestDiListener.api
     }
 

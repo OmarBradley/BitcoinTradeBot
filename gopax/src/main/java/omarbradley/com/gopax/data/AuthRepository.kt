@@ -1,6 +1,5 @@
 package omarbradley.com.gopax.data
 
-import omarbradley.com.gopax.data.remote.json.resopnse.OrderJson
 import omarbradley.com.gopax.entity.AssetType
 import omarbradley.com.gopax.entity.requset.OrderRequest
 import omarbradley.com.gopax.entity.requset.TradeRequest
