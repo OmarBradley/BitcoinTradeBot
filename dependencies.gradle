@@ -42,7 +42,7 @@ def versions = [
         jodaTime         : "2.10.1",
         room             : "2.1.0-alpha04",
         junit4           : "4.12",
-        hamcrest         : "2.1"
+        hamkrest         : "1.7.0.0"
 ]
 
 def kotlin = [
@@ -156,7 +156,7 @@ deps.room = room
 
 def unitTest = [
         junit4  : "junit:junit:$versions.junit4",
-        hamcrest: "org.hamcrest:hamcrest:$versions.hamcrest"
+        hamkrest: "com.natpryce:hamkrest:$versions.hamkrest"
 ]
 deps.unitTest = unitTest
 

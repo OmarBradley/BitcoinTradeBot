@@ -11,7 +11,7 @@ android {
         versionCode config.versionCode
         versionName config.versionName
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
 
@@ -51,8 +51,8 @@ dependencies {
     testImplementation deps.koin.test
     testImplementation deps.room.test
 
-    androidTestImplementation deps.unitTest.junit4
-    androidTestImplementation deps.unitTest.hamcrest
     androidTestImplementation deps.androidx.test.runner
+    androidTestImplementation deps.androidx.test.rule
     androidTestImplementation deps.koin.test
+    androidTestImplementation deps.unitTest.hamkrest
 }
