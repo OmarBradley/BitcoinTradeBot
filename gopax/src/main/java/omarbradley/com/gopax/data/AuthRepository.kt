@@ -7,7 +7,7 @@ import omarbradley.com.gopax.entity.resopnse.Balance
 import omarbradley.com.gopax.entity.resopnse.Order
 import omarbradley.com.gopax.entity.resopnse.Trade
 
-internal interface AuthRepository {
+interface AuthRepository {
 
     suspend fun getBalances(): List<Balance>
 

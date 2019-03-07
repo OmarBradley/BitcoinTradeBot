@@ -8,7 +8,7 @@ import omarbradley.com.gopax.entity.toSide
 import omarbradley.com.gopax.entity.toStatus
 import omarbradley.com.gopax.entity.toType
 
-internal object OrderMapper : Mapper<Order, OrderJson> {
+object OrderMapper : Mapper<Order, OrderJson> {
 
     override fun toData(entity: Order): OrderJson =
         OrderJson(

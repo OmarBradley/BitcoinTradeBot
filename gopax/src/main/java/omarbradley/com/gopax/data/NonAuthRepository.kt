@@ -3,7 +3,7 @@ package omarbradley.com.gopax.data
 import omarbradley.com.gopax.entity.AssetType
 import omarbradley.com.gopax.entity.resopnse.*
 
-internal interface NonAuthRepository {
+interface NonAuthRepository {
 
     suspend fun getAsserts(): List<Asset>
 

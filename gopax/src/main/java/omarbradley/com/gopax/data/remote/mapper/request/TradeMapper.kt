@@ -6,7 +6,7 @@ import omarbradley.com.gopax.data.remote.json.resopnse.TradeJson
 import omarbradley.com.gopax.entity.resopnse.Trade
 import omarbradley.com.gopax.entity.toSide
 
-internal object TradeMapper : Mapper<Trade, TradeJson> {
+object TradeMapper : Mapper<Trade, TradeJson> {
 
     override fun toData(entity: Trade): TradeJson =
         TradeJson(

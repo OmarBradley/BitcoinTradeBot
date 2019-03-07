@@ -4,7 +4,7 @@ import omarbradley.com.common.domain.Mapper
 import omarbradley.com.gopax.data.remote.json.resopnse.BalanceJson
 import omarbradley.com.gopax.entity.resopnse.Balance
 
-internal object BalanceMapper : Mapper<Balance, BalanceJson> {
+object BalanceMapper : Mapper<Balance, BalanceJson> {
 
     override fun toData(entity: Balance): BalanceJson =
         BalanceJson(

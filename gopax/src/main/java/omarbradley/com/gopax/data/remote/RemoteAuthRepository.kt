@@ -17,7 +17,7 @@ import omarbradley.com.gopax.entity.resopnse.Balance
 import omarbradley.com.gopax.entity.resopnse.Order
 import omarbradley.com.gopax.entity.resopnse.Trade
 
-internal class RemoteAuthRepository(
+class RemoteAuthRepository(
     private val api: GopaxApi,
     private val apiKey: String,
     private val secretKey: String

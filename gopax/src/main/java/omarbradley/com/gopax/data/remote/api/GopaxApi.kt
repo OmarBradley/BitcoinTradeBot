@@ -5,7 +5,7 @@ import omarbradley.com.gopax.data.remote.json.request.OrderRequestJson
 import omarbradley.com.gopax.data.remote.json.resopnse.*
 import retrofit2.http.*
 
-internal interface GopaxApi {
+interface GopaxApi {
 
     /**
      * auth-api

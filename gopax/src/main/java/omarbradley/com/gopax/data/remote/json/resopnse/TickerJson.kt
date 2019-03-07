@@ -1,6 +1,6 @@
 package omarbradley.com.gopax.data.remote.json.resopnse
 
-internal data class TickerJson(
+data class TickerJson(
     val price: Int,
     val ask: Int,
     val bid: Int,

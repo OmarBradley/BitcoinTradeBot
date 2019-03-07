@@ -6,7 +6,7 @@ import omarbradley.com.gopax.entity.requset.OrderRequest
 import omarbradley.com.gopax.entity.toSide
 import omarbradley.com.gopax.entity.toType
 
-internal object OrderRequestMapper : Mapper<OrderRequest, OrderRequestJson> {
+object OrderRequestMapper : Mapper<OrderRequest, OrderRequestJson> {
 
     override fun toData(entity: OrderRequest): OrderRequestJson =
         OrderRequestJson(

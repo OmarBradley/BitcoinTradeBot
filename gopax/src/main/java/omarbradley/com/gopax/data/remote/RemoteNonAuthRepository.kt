@@ -7,7 +7,7 @@ import omarbradley.com.gopax.entity.AssetType
 import omarbradley.com.gopax.entity.resopnse.*
 import omarbradley.com.gopax.entity.toPair
 
-internal class RemoteNonAuthRepository(
+class RemoteNonAuthRepository(
     private val api: GopaxApi
 ) : NonAuthRepository {
 

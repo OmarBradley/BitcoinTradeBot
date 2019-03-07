@@ -1,6 +1,6 @@
 package omarbradley.com.gopax.data.remote.json.resopnse
 
-internal data class OrderJson(
+data class OrderJson(
     val id: String,
     val status: String,
     val price: Int,

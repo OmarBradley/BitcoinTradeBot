@@ -5,7 +5,7 @@ import omarbradley.com.common.util.toDateTime
 import omarbradley.com.gopax.data.remote.json.resopnse.TickerJson
 import omarbradley.com.gopax.entity.resopnse.Ticker
 
-internal object TickerMapper : Mapper<Ticker, TickerJson> {
+object TickerMapper : Mapper<Ticker, TickerJson> {
 
     override fun toData(entity: Ticker): TickerJson =
         TickerJson(

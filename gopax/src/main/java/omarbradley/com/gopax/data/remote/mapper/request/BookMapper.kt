@@ -6,7 +6,7 @@ import omarbradley.com.gopax.entity.resopnse.Book
 import omarbradley.com.gopax.entity.resopnse.OrderBook
 import omarbradley.com.gopax.entity.resopnse.toList
 
-internal object BookMapper : Mapper<Book, BookJson> {
+object BookMapper : Mapper<Book, BookJson> {
 
     override fun toData(entity: Book): BookJson =
         BookJson(
