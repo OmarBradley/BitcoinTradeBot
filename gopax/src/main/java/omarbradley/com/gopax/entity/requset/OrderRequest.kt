@@ -3,7 +3,7 @@ package omarbradley.com.gopax.entity.requset
 import omarbradley.com.gopax.entity.Side
 import omarbradley.com.gopax.entity.Type
 
-internal data class OrderRequest(
+data class OrderRequest(
     val type: Type,
     val side: Side,
     val price: Int,

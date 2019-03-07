@@ -1,6 +1,6 @@
 package omarbradley.com.gopax.data.local
 
-import omarbradley.com.gopax.data.AuthKeyRepository
+import omarbradley.com.gopax.data.repository.AuthKeyRepository
 import omarbradley.com.gopax.data.local.dao.AuthKeyDao
 import omarbradley.com.gopax.data.local.mapper.AuthKeyMapper
 import omarbradley.com.gopax.entity.resopnse.AuthKey

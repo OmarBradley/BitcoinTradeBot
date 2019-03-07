@@ -5,7 +5,7 @@ import omarbradley.com.gopax.entity.Status
 import omarbradley.com.gopax.entity.Type
 import org.joda.time.DateTime
 
-internal data class Order(
+data class Order(
     val id: String,
     val status: Status,
     val price: Int,

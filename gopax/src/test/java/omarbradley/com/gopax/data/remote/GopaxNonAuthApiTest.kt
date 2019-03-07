@@ -1,15 +1,14 @@
 package omarbradley.com.gopax.data.remote
 
-import io.kotlintest.extensions.TestListener
 import io.kotlintest.shouldNotBe
 import io.kotlintest.specs.StringSpec
-import omarbradley.com.gopax.data.remote.api.GopaxApi
-import omarbradley.com.gopax.di.TestDiListener
+import omarbradley.com.gopax.data.remote.api.NonAuthApi
+import omarbradley.com.gopax.data.remote.module.nonAuthApi
 
 class GopaxNonAuthApiTest : StringSpec({
 
-    val api: GopaxApi by lazy {
-        TestDiListener.api
+    val api: NonAuthApi by lazy {
+        nonAuthApi
     }
 
     "getAssets api가 성공적으로 응답이 된다"{
@@ -40,8 +39,4 @@ class GopaxNonAuthApiTest : StringSpec({
         response shouldNotBe null
     }
 
-}) {
-
-    override fun listeners(): List<TestListener> = listOf(TestDiListener)
-
-}
+})

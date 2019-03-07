@@ -1,11 +1,11 @@
 package omarbradley.com.gopax.entity.resopnse
 
-internal data class Book(
+data class Book(
     val bid: List<OrderBook>,
     val ask: List<OrderBook>
 )
 
-internal data class OrderBook(
+data class OrderBook(
     val id: String,
     val price: Int,
     val amount: Double
@@ -19,5 +19,5 @@ internal data class OrderBook(
 
 }
 
-internal fun OrderBook.toList(): List<Any> =
+fun OrderBook.toList(): List<Any> =
     listOf(id, price, amount)

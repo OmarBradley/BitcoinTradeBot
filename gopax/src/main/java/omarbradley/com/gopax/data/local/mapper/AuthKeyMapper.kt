@@ -1,6 +1,6 @@
 package omarbradley.com.gopax.data.local.mapper
 
-import omarbradley.com.common.domain.Mapper
+import omarbradley.com.common.data.Mapper
 import omarbradley.com.gopax.data.local.model.CachedAuthKey
 import omarbradley.com.gopax.entity.resopnse.AuthKey
 

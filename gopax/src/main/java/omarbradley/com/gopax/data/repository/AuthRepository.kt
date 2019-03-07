@@ -1,4 +1,4 @@
-package omarbradley.com.gopax.data
+package omarbradley.com.gopax.data.repository
 
 import omarbradley.com.gopax.entity.AssetType
 import omarbradley.com.gopax.entity.requset.OrderRequest

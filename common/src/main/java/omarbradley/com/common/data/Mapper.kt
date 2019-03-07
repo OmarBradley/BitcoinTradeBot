@@ -1,4 +1,4 @@
-package omarbradley.com.common.domain
+package omarbradley.com.common.data
 
 interface Mapper<ENTITY, DATA> {
 

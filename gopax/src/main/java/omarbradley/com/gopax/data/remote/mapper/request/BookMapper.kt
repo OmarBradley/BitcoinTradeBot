@@ -1,6 +1,6 @@
 package omarbradley.com.gopax.data.remote.mapper.request
 
-import omarbradley.com.common.domain.Mapper
+import omarbradley.com.common.data.Mapper
 import omarbradley.com.gopax.data.remote.json.resopnse.BookJson
 import omarbradley.com.gopax.entity.resopnse.Book
 import omarbradley.com.gopax.entity.resopnse.OrderBook

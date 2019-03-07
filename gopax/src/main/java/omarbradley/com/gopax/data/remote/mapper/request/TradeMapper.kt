@@ -1,6 +1,6 @@
 package omarbradley.com.gopax.data.remote.mapper.request
 
-import omarbradley.com.common.domain.Mapper
+import omarbradley.com.common.data.Mapper
 import omarbradley.com.common.util.toDateTime
 import omarbradley.com.gopax.data.remote.json.resopnse.TradeJson
 import omarbradley.com.gopax.entity.resopnse.Trade

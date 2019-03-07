@@ -4,11 +4,19 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+                name="viewModel"
+                type="omarbradley.com.bitcointradebot.gopax.viewmodel.GopaxLoginViewModel"/>
+    </data>
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/bgWhite"
-            tools:context=".gopax.GopaxLoginActivity">
+            tools:context=".gopax.activity.GopaxLoginActivity">
 
         <Toolbar
                 android:id="@+id/toolbar"
@@ -63,8 +71,35 @@
                 android:text="@string/label.login_gopax"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/textView_storedAuthKey"
                 app:layout_constraintTop_toBottomOf="@+id/editText_inputSecretKey"/>
+
+        <TextView
+                android:id="@+id/textView_storedAuthKey"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label.stored_key"
+                android:textColor="@color/textBlack"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/viewMargin"
+                app:isVisible="@{viewModel.isVisibleOfStoredAuthKey}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/recyclerView_authKeys"
+                app:layout_constraintTop_toBottomOf="@+id/button_loginGopax"
+                app:layout_constraintHorizontal_bias="0.0"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_authKeys"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/viewMargin"
+                app:isVisible="@{viewModel.isVisibleOfAuthKeys}"
+                app:layout_constraintTop_toBottomOf="@+id/textView_storedAuthKey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.0"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

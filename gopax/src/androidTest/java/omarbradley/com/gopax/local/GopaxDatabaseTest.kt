@@ -4,7 +4,7 @@ import androidx.test.runner.AndroidJUnit4
 import com.natpryce.hamkrest.assertion.assertThat
 import com.natpryce.hamkrest.equalTo
 import kotlinx.coroutines.runBlocking
-import omarbradley.com.gopax.data.AuthKeyRepository
+import omarbradley.com.gopax.data.repository.AuthKeyRepository
 import omarbradley.com.gopax.di.goapxTestDatabaseModule
 import omarbradley.com.gopax.entity.resopnse.AuthKey
 import org.joda.time.DateTime

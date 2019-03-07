@@ -1,26 +1,25 @@
 package omarbradley.com.gopax.data.remote
 
-import io.kotlintest.extensions.TestListener
 import io.kotlintest.shouldNotBe
 import io.kotlintest.specs.DescribeSpec
 import omarbradley.com.common.util.HttpMethod
 import omarbradley.com.common.util.timeSecond
-import omarbradley.com.gopax.data.remote.api.GopaxApi
+import omarbradley.com.gopax.data.remote.api.AuthApi
 import omarbradley.com.gopax.data.remote.header.Header
 import omarbradley.com.gopax.data.remote.header.Signature
 import omarbradley.com.gopax.data.remote.header.createHeaders
-import omarbradley.com.gopax.di.TestDiListener
+import omarbradley.com.gopax.data.remote.module.authApi
 
 class GopaxAuthApiTest : DescribeSpec({
 
     /**
-     * 실제 내 계정 gopaxAuthApi 키와 secret 임, 테스트에만 이용하자
+     * 실제 내 계정 authApi 키와 secret 임, 테스트에만 이용하자
      */
     val apiKey = ""
     val secretKey = ""
 
-    val api: GopaxApi by lazy {
-        TestDiListener.api
+    val api: AuthApi by lazy {
+        authApi
     }
 
     describe(".getBalances") {
@@ -67,8 +66,4 @@ class GopaxAuthApiTest : DescribeSpec({
         }
     }
 
-}) {
-
-    override fun listeners(): List<TestListener> = listOf(TestDiListener)
-
-}
+})

@@ -2,7 +2,7 @@ package omarbradley.com.gopax.entity.resopnse
 
 import org.joda.time.DateTime
 
-internal data class Ticker(
+data class Ticker(
     val price: Int,
     val ask: Int,
     val bid: Int,

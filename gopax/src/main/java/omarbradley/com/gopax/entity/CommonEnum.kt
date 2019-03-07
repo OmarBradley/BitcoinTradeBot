@@ -2,7 +2,7 @@ package omarbradley.com.gopax.entity
 
 import omarbradley.com.gopax.entity.resopnse.Asset
 
-internal enum class AssetType(
+enum class AssetType(
     val id: String,
     val korName: String
 ) {
@@ -53,17 +53,17 @@ internal enum class AssetType(
     CRO("CRO", "크립토닷컴 체인"),
 }
 
-internal fun AssetType.toAsset() = Asset(this)
+fun AssetType.toAsset() = Asset(this)
 
-internal fun String.toAssetType() = AssetType.values()
+fun String.toAssetType() = AssetType.values()
     .first { it.id == this }
 
-internal infix fun AssetType.toPair(quoteAssetType: AssetType): String = "$id-${quoteAssetType.id}"
+infix fun AssetType.toPair(quoteAssetType: AssetType): String = "$id-${quoteAssetType.id}"
 
 /**
  * 주문 상태를 나타내는 Enum class
  */
-internal enum class Status(
+enum class Status(
     val jsonString: String
 ) {
     /**
@@ -87,13 +87,13 @@ internal enum class Status(
     UPDATED("updated")
 }
 
-internal fun String.toStatus() = Status.values()
+fun String.toStatus() = Status.values()
     .first { it.jsonString == this }
 
 /**
  * 주문 구분을 나타내는 Enum class
  */
-internal enum class Side(
+enum class Side(
     val jsonString: String
 ) {
     /**
@@ -107,13 +107,13 @@ internal enum class Side(
     SELL("sell")
 }
 
-internal fun String.toSide() = Side.values()
+fun String.toSide() = Side.values()
     .first { it.jsonString == this }
 
 /**
  * 주문 종류을 나타내는 Enum class
  */
-internal enum class Type(
+enum class Type(
     val jsonString: String
 ) {
     /**
@@ -122,5 +122,5 @@ internal enum class Type(
     LIMIT("limit")
 }
 
-internal fun String.toType() = Type.values()
+fun String.toType() = Type.values()
     .first { it.jsonString == this }

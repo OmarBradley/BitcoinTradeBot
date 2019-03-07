@@ -2,8 +2,8 @@ package omarbradley.com.gopax.data.remote
 
 import omarbradley.com.common.util.HttpMethod
 import omarbradley.com.common.util.toJsonString
-import omarbradley.com.gopax.data.AuthRepository
-import omarbradley.com.gopax.data.remote.api.GopaxApi
+import omarbradley.com.gopax.data.repository.AuthRepository
+import omarbradley.com.gopax.data.remote.api.AuthApi
 import omarbradley.com.gopax.data.remote.header.createHeaders
 import omarbradley.com.gopax.data.remote.mapper.request.BalanceMapper
 import omarbradley.com.gopax.data.remote.mapper.request.OrderMapper
@@ -18,7 +18,7 @@ import omarbradley.com.gopax.entity.resopnse.Order
 import omarbradley.com.gopax.entity.resopnse.Trade
 
 class RemoteAuthRepository(
-    private val api: GopaxApi,
+    private val api: AuthApi,
     private val apiKey: String,
     private val secretKey: String
 ) : AuthRepository {

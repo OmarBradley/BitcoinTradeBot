@@ -12,4 +12,8 @@ val gopaxDatabaseModule = module {
             .build()
     }
 
+    single {
+        get<GopaxDatabase>().authKeyDao()
+    }
+
 }

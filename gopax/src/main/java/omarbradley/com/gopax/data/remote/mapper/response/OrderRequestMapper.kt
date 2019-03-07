@@ -1,6 +1,6 @@
 package omarbradley.com.gopax.data.remote.mapper.response
 
-import omarbradley.com.common.domain.Mapper
+import omarbradley.com.common.data.Mapper
 import omarbradley.com.gopax.data.remote.json.request.OrderRequestJson
 import omarbradley.com.gopax.entity.requset.OrderRequest
 import omarbradley.com.gopax.entity.toSide

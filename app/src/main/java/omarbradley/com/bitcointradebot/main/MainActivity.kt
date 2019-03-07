@@ -5,7 +5,7 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 import omarbradley.com.bitcointradebot.R
 import omarbradley.com.bitcointradebot.base.BaseActivity
-import omarbradley.com.bitcointradebot.gopax.GopaxLoginActivity
+import omarbradley.com.bitcointradebot.gopax.activity.GopaxLoginActivity
 
 class MainActivity : BaseActivity() {
 

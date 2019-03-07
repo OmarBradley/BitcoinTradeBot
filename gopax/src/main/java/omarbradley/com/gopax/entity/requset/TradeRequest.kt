@@ -1,6 +1,6 @@
 package omarbradley.com.gopax.entity.requset
 
-internal data class TradeRequest(
+data class TradeRequest(
     val limit: Int?,
     val pastmax: Int?,
     val latestmin: Int?,
@@ -8,7 +8,7 @@ internal data class TradeRequest(
     val before: Long?
 )
 
-internal fun TradeRequest.toQueryMap() =
+fun TradeRequest.toQueryMap() =
     mapOf(
         "limit" to limit.toString(),
         "pastmax" to pastmax.toString(),
