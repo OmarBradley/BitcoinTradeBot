@@ -16,8 +16,8 @@ class GopaxAuthApiTest : DescribeSpec({
     /**
      * 실제 내 계정 gopaxAuthApi 키와 secret 임, 테스트에만 이용하자
      */
-    val apiKey = "e1d1a326-99b9-45cc-9847-0f719143668b"
-    val secretKey = "AizZfxQyy2gqDrnrYSSXSkaPGYxjLfDWFrxSLf/Sqa9BJOrWizXdhdaXdL2vrnqXynyTIB6QiiM1QXzcIrJSHA=="
+    val apiKey = ""
+    val secretKey = ""
 
     val api: GopaxApi by lazy {
         TestDiListener.api
