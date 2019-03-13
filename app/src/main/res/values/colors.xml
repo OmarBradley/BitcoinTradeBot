@@ -10,6 +10,8 @@
 
     <!-- Text -->
     <color name="textWhite">#FFFFFF</color>
+    <color name="textGray">#232F34</color>
     <color name="textBlack">#000000</color>
+    <color name="textGray2">#344955</color>
 
 </resources>

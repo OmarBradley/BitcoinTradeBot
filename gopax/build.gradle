@@ -50,9 +50,11 @@ dependencies {
     testImplementation deps.kotlinTest.runner
     testImplementation deps.koin.test
     testImplementation deps.room.test
+    testImplementation deps.unitTest.hamkrest
 
     androidTestImplementation deps.androidx.test.runner
     androidTestImplementation deps.androidx.test.rule
     androidTestImplementation deps.koin.test
     androidTestImplementation deps.unitTest.hamkrest
+    androidTestImplementation deps.kotlin.reflect
 }

@@ -2,13 +2,20 @@
 
     <string name="app_name">BitcoinTradeBot</string>
 
+    <!--======================== label ========================-->
     <string name="label.select_exchange">거래소 고르기</string>
     <string name="label.input_key">Key 입력</string>
     <string name="label.stored_key">저장된 키</string>
-
     <string name="label.gopax">고팍스</string>
     <string name="label.input_api_key">API Key를 입력하세요</string>
     <string name="label.input_secret_key">Secret Key를 입력하세요</string>
     <string name="label.login_gopax">고팍스 거래소 로그인</string>
+    <string name="label.api_key">API 키</string>
+    <string name="label.secret_key">시크릿 키</string>
+    <string name="label.fail_auth_key_auto_store">인증 키 자동저장에 실패햐였습니다</string>
+    <string name="label.fail_login">로그인에 실패하였습니다</string>
+
+    <!--======================== icon ========================-->
+    <string name="icon_delete">{faw_trash-alt}</string>
 
 </resources>

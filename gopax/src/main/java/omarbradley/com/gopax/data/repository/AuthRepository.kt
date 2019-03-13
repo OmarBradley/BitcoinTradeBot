@@ -9,18 +9,18 @@ import omarbradley.com.gopax.entity.resopnse.Trade
 
 interface AuthRepository {
 
-    suspend fun getBalances(): List<Balance>
+    suspend fun getBalances(apiKey: String, secretKey: String): List<Balance>
 
-    suspend fun getBalance(assetType: AssetType): List<Balance>
+    suspend fun getBalance(apiKey: String, secretKey: String, assetType: AssetType): List<Balance>
 
-    suspend fun getOrders(): List<Order>
+    suspend fun getOrders(apiKey: String, secretKey: String): List<Order>
 
-    suspend fun getOrder(orderId: String): Order
+    suspend fun getOrder(apiKey: String, secretKey: String, orderId: String): Order
 
-    suspend fun postOrder(orderRequest: OrderRequest): Order
+    suspend fun postOrder(apiKey: String, secretKey: String, orderRequest: OrderRequest): Order
 
-    suspend fun deleteOrder(orderId: String)
+    suspend fun deleteOrder(apiKey: String, secretKey: String, orderId: String)
 
-    suspend fun getTrades(tradeRequest: TradeRequest): List<Trade>
+    suspend fun getTrades(apiKey: String, secretKey: String, tradeRequest: TradeRequest): List<Trade>
 
 }

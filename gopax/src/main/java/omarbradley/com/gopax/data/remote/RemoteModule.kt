@@ -1,4 +1,4 @@
-package omarbradley.com.gopax.data.remote.module
+package omarbradley.com.gopax.data.remote
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient
@@ -6,13 +6,24 @@ import okhttp3.logging.HttpLoggingInterceptor
 import omarbradley.com.gopax.BuildConfig
 import omarbradley.com.gopax.data.remote.api.AuthApi
 import omarbradley.com.gopax.data.remote.api.NonAuthApi
+import omarbradley.com.gopax.data.repository.AuthRepository
+import omarbradley.com.gopax.data.repository.NonAuthRepository
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 const val API_END_POINT = "https://api.gopax.co.kr"
 
-val retrofit: Retrofit = createNetworkClient(API_END_POINT, BuildConfig.DEBUG)
+val goapxRemoteModule = module {
+
+    single { RemoteNonAuthRepository(nonAuthApi) as NonAuthRepository }
+    single { RemoteAuthRepository(authApi) as AuthRepository }
+}
+
+val retrofit: Retrofit = createNetworkClient(
+    API_END_POINT,
+    BuildConfig.DEBUG
+)
 val authApi: AuthApi = retrofit.create(AuthApi::class.java)
 val nonAuthApi: NonAuthApi = retrofit.create(NonAuthApi::class.java)
 

@@ -23,6 +23,7 @@ def versions = [
         rxKotlin         : "2.3.0",
         rxAndroid        : "2.1.0",
         androidX         : "2.0.0-beta01",
+        lifecycle : "2.1.0-alpha02",
         mocktioKotlin    : "2.0.0-RC2",
         retrofit         : "2.4.0",
         okHttp           : "3.11.0",
@@ -42,7 +43,8 @@ def versions = [
         jodaTime         : "2.10.1",
         room             : "2.1.0-alpha04",
         junit4           : "4.12",
-        hamkrest         : "1.7.0.0"
+        hamkrest         : "1.7.0.0",
+        anko             : "0.10.8"
 ]
 
 def kotlin = [
@@ -79,9 +81,8 @@ def androidx = [
 deps.androidx = androidx
 
 def lifecycle = [
-        compiler       : "androidx.lifecycle:lifecycle-compiler:$versions.androidX",
-        extensions     : "androidx.lifecycle:lifecycle-extensions:$versions.androidX",
-        reactivestreams: "androidx.lifecycle:lifecycle-reactivestreams-ktx:$versions.androidX",
+        compiler    : "androidx.lifecycle:lifecycle-compiler:$versions.lifecycle",
+        viewModelKtx: "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle"
 ]
 deps.lifecycle = lifecycle
 
@@ -159,6 +160,13 @@ def unitTest = [
         hamkrest: "com.natpryce:hamkrest:$versions.hamkrest"
 ]
 deps.unitTest = unitTest
+
+def anko = [
+        commons       : "org.jetbrains.anko:anko-commons:$versions.anko",
+        sdk23Coroutine: "org.jetbrains.anko:anko-sdk23-coroutines:$versions.anko",
+        sdk23         : "org.jetbrains.anko:anko-sdk23:$versions.anko",
+]
+deps.anko = anko
 
 static def addRepositories(RepositoryHandler repositoryHandler) {
     repositoryHandler.google()

@@ -18,6 +18,7 @@
             android:background="@color/bgWhite"
             tools:context=".gopax.activity.GopaxLoginActivity">
 
+
         <Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="0dp"
@@ -28,28 +29,30 @@
                 android:elevation="@dimen/toolBarElevation"
                 app:layout_constraintVertical_chainStyle="packed"
                 app:layout_constraintVertical_bias="0.0"
-                app:layout_constraintBottom_toTopOf="@+id/editText_inputApiKey"
+                app:layout_constraintBottom_toTopOf="@+id/editText_apiKey"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
 
         <EditText
-                android:id="@+id/editText_inputApiKey"
+                android:id="@+id/editText_apiKey"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/viewMargin"
                 android:hint="@string/label.input_api_key"
                 android:textColorHint="@color/textBlack"
                 android:textColor="@color/textBlack"
+                android:text="@{viewModel.output.textOfApiKey()}"
+                android:afterTextChanged='@{(s) -> viewModel.inputApiKey(s.toString() ?? "")}'
                 android:inputType="text"
                 app:backgroundTint="@color/bgGreen"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/editText_inputSecretKey"
+                app:layout_constraintBottom_toTopOf="@+id/editText_secretKey"
                 app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
 
         <EditText
-                android:id="@+id/editText_inputSecretKey"
+                android:id="@+id/editText_secretKey"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/viewMargin"
@@ -57,11 +60,13 @@
                 android:textColorHint="@color/textBlack"
                 android:textColor="@color/textBlack"
                 android:inputType="text"
+                android:text="@{viewModel.output.textOfSecretKey()}"
+                android:afterTextChanged='@{(s) -> viewModel.inputSecretKey(s.toString() ?? "")}'
                 app:backgroundTint="@color/bgGreen"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/button_loginGopax"
-                app:layout_constraintTop_toBottomOf="@+id/editText_inputApiKey"/>
+                app:layout_constraintTop_toBottomOf="@+id/editText_apiKey"/>
 
         <Button
                 android:id="@+id/button_loginGopax"
@@ -69,10 +74,12 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/viewMargin"
                 android:text="@string/label.login_gopax"
+                android:onClick="@{(v) -> viewModel.onClickLoginGopaxButton()}"
+                android:enabled="@{viewModel.output.enableLoginGopaxButton()}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/textView_storedAuthKey"
-                app:layout_constraintTop_toBottomOf="@+id/editText_inputSecretKey"/>
+                app:layout_constraintTop_toBottomOf="@+id/editText_secretKey"/>
 
         <TextView
                 android:id="@+id/textView_storedAuthKey"
@@ -82,7 +89,7 @@
                 android:textColor="@color/textBlack"
                 android:textStyle="bold"
                 android:layout_margin="@dimen/viewMargin"
-                app:isVisible="@{viewModel.isVisibleOfStoredAuthKey}"
+                app:isVisible="@{viewModel.output.isVisibleOfStoredAuthKey()}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/recyclerView_authKeys"
@@ -94,12 +101,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/viewMargin"
-                app:isVisible="@{viewModel.isVisibleOfAuthKeys}"
+                app:isVisible="@{viewModel.output.isVisibleOfAuthKeys()}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintTop_toBottomOf="@+id/textView_storedAuthKey"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintVertical_bias="0.0"/>
+                app:layout_constraintVertical_bias="0.0"
+                tools:listitem="@layout/itemview_auth_key"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

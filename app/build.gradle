@@ -35,7 +35,7 @@ android {
         enabled = true
     }
 
-    lintOptions{
+    lintOptions {
         disable 'ExtraTranslation'
     }
 
@@ -48,6 +48,8 @@ android {
 
 dependencies {
 
+    implementation project(':gopax')
+    implementation project(':common')
     implementation deps.kotlin.stdlibJdk8
     implementation deps.androidx.appcompat
     implementation deps.androidx.ktx
@@ -60,7 +62,17 @@ dependencies {
     implementation deps.koin.android
     implementation deps.koin.scope
     implementation deps.koin.viewmodel
+    implementation deps.iconics.core
+    implementation deps.iconics.fontawesome
+    implementation deps.iconics.views
+    implementation deps.coroutine.core
+    implementation deps.coroutine.android
+    implementation deps.anko.commons
+    implementation deps.anko.sdk23
+    implementation deps.lifecycle.viewModelKtx
 
+    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
     kapt deps.lifecycle.compiler
 
     testImplementation deps.kotlinTest.runner
@@ -69,4 +81,5 @@ dependencies {
     androidTestImplementation deps.androidx.test.runner
     androidTestImplementation deps.androidx.test.espresso
     androidTestImplementation deps.androidx.test.rule
+
 }

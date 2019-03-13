@@ -15,10 +15,10 @@ interface AuthKeyDao {
      * todo 파라미터 갯수에 따라 메소드를 하나씩 만드는 것이 매우 비효율적으로 보임 -> 효율적인 방법 찾기
      */
     @Query("SELECT * FROM CachedAuthKey WHERE apiKey = :apiKey LIMIT 1")
-    suspend fun getAuthKeyByApiKey(apiKey: String): CachedAuthKey
+    suspend fun getAuthKeyByApiKey(apiKey: String): CachedAuthKey?
 
     @Query("SELECT * FROM CachedAuthKey WHERE secretKey = :secretKey LIMIT 1")
-    suspend fun getAuthKeyBySecretKey(secretKey: String): CachedAuthKey
+    suspend fun getAuthKeyBySecretKey(secretKey: String): CachedAuthKey?
 
     @Insert
     suspend fun insertAuthKey(authKey: CachedAuthKey)

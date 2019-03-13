@@ -8,9 +8,8 @@ import omarbradley.com.gopax.data.remote.api.AuthApi
 import omarbradley.com.gopax.data.remote.header.Header
 import omarbradley.com.gopax.data.remote.header.Signature
 import omarbradley.com.gopax.data.remote.header.createHeaders
-import omarbradley.com.gopax.data.remote.module.authApi
 
-class GopaxAuthApiTest : DescribeSpec({
+class AuthApiTest : DescribeSpec({
 
     /**
      * 실제 내 계정 authApi 키와 secret 임, 테스트에만 이용하자

@@ -3,9 +3,8 @@ package omarbradley.com.gopax.data.remote
 import io.kotlintest.shouldNotBe
 import io.kotlintest.specs.StringSpec
 import omarbradley.com.gopax.data.remote.api.NonAuthApi
-import omarbradley.com.gopax.data.remote.module.nonAuthApi
 
-class GopaxNonAuthApiTest : StringSpec({
+class NonAuthApiTest : StringSpec({
 
     val api: NonAuthApi by lazy {
         nonAuthApi

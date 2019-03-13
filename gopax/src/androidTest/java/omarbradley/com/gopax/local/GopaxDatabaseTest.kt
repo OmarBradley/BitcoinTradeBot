@@ -4,6 +4,7 @@ import androidx.test.runner.AndroidJUnit4
 import com.natpryce.hamkrest.assertion.assertThat
 import com.natpryce.hamkrest.equalTo
 import kotlinx.coroutines.runBlocking
+import omarbradley.com.gopax.data.local.db.GopaxDatabase
 import omarbradley.com.gopax.data.repository.AuthKeyRepository
 import omarbradley.com.gopax.di.goapxTestDatabaseModule
 import omarbradley.com.gopax.entity.resopnse.AuthKey
@@ -21,6 +22,7 @@ import org.koin.test.inject
 class GopaxDatabaseTest : KoinTest {
 
     private val authKeyRepository: AuthKeyRepository by inject()
+    private val database: GopaxDatabase by inject()
 
     private val dummyAuthKeys = listOf(
         AuthKey("secretKey_1", "apiKey_1", DateTime(2019, 1, 1, 9, 0, 0)),
@@ -48,8 +50,17 @@ class GopaxDatabaseTest : KoinTest {
     fun getAuthKeyByApiKeyTest() {
         runBlocking {
             val exampleApiKey = "apiKey_1"
-            val secretKey = authKeyRepository.getAuthKeyByApiKey(exampleApiKey).secretKey
+            val secretKey = authKeyRepository.getAuthKeyByApiKey(exampleApiKey)?.secretKey
             assertThat(secretKey, equalTo("secretKey_1"))
+        }
+    }
+
+    @Test
+    fun getAuthKeyByApiKeyTest_when_not_found_auth_key() {
+        runBlocking {
+            val exampleApiKey = "apiKey_0"
+            val authKey = authKeyRepository.getAuthKeyByApiKey(exampleApiKey)
+            assertThat(authKey, equalTo<AuthKey?>(null))
         }
     }
 
@@ -57,7 +68,7 @@ class GopaxDatabaseTest : KoinTest {
     fun getAuthKeyBySecretKeyTest() {
         runBlocking {
             val exampleSecretKey = "secretKey_1"
-            val apiKey = authKeyRepository.getAuthKeyBySecretKey(exampleSecretKey).apiKey
+            val apiKey = authKeyRepository.getAuthKeyBySecretKey(exampleSecretKey)?.apiKey
             assertThat(apiKey, equalTo("apiKey_1"))
         }
     }
@@ -65,7 +76,7 @@ class GopaxDatabaseTest : KoinTest {
     @Test
     fun insertAuthKeyTest() {
         runBlocking {
-            val exampleAuthKey = AuthKey("secretKey_3", "apiKey_3", DateTime(2019, 3, 1, 9, 0, 0))
+            val exampleAuthKey = AuthKey("secretKey_4", "apiKey_4", DateTime(2019, 3, 1, 9, 0, 0))
             authKeyRepository.insertAuthKey(exampleAuthKey)
 
             val totalSize = authKeyRepository.getAllAuthKeys().size
@@ -88,6 +99,7 @@ class GopaxDatabaseTest : KoinTest {
         runBlocking {
             authKeyRepository.deleteAllAuthKeys()
         }
+        database.close()
         stopKoin()
     }
 
