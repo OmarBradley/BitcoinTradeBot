@@ -6,6 +6,7 @@ buildscript {
     dependencies {
         classpath deps.build.gradle
         classpath deps.kotlin.gradlePlugin
+        classpath deps.fabric.gradle
     }
     repositories {
         google()

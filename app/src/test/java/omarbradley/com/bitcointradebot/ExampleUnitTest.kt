@@ -1,17 +1,11 @@
 package omarbradley.com.bitcointradebot
 
-import org.junit.Test
+import io.kotlintest.shouldBe
+import io.kotlintest.specs.StringSpec
 
-import org.junit.Assert.*
+class ExampleUnitTest : StringSpec({
 
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * See [testing documentation](http://d.android.com/tools/testing).
- */
-class ExampleUnitTest {
-    @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    "sasas"{
+        1 shouldBe 1
     }
-}
+})

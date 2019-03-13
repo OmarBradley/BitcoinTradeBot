@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+                name="item"
+                type="omarbradley.com.bitcointradebot.gopax.recyclerview.authkeyitem.AuthKeyItem"/>
+    </data>
+
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:text="@string/label.api_key"
+                android:layout_marginBottom="@dimen/viewMargin8"
+                android:textColor="@color/textGray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textSize16"/>
+
+        <TextView
+                android:id="@+id/textView_apiKey"
+                android:text="@{item.apiKey}"
+                android:layout_marginBottom="@dimen/viewMargin8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/textGray2"
+                android:textSize="@dimen/textSize14"/>
+
+        <TextView
+                android:text="@string/label.secret_key"
+                android:textColor="@color/textGray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textSize16"
+                android:layout_marginBottom="@dimen/viewMargin8"/>
+
+        <TextView
+                android:id="@+id/textView_secretKey"
+                android:text="@{item.secretKey}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/textGray2"
+                android:textSize="@dimen/textSize14"/>
+
+        <com.mikepenz.iconics.view.IconicsTextView
+                android:id="@+id/iconicsTextView_delete"
+                android:text="@string/icon_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/textGray2"
+                android:paddingTop="@dimen/viewMargin"
+                android:paddingEnd="@dimen/viewMargin"
+                android:paddingBottom="@dimen/viewMargin"
+                android:textSize="@dimen/textSize16"/>
+
+    </LinearLayout>
+
+</layout>

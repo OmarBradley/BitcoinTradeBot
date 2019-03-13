@@ -1,0 +1,12 @@
+apply plugin: 'kotlin'
+
+dependencies {
+
+    implementation deps.kotlin.stdlibJdk8
+    implementation deps.gson.gson
+    implementation deps.apacheCommons.codec
+    implementation deps.coroutine.core
+    implementation deps.joda.jodaTime
+
+    testImplementation deps.kotlinTest.runner
+}
